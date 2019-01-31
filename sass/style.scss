@@ -10,6 +10,7 @@ $brand-secondary: #FFE9E3 !default;
 
 $brand-white: #fff;
 $brand-black: #000;
+$brand-yellow: #FFE942;
 $brand-lighter: #727272;
 $brand-selection-color: #b7c2c2;
 $brand-body-color: #fcfcfc;
@@ -108,7 +109,7 @@ body {
 	line-height: 1.8;
 	font-size: 16px;
 	font-weight: 400;
-	background: $brand-white;
+	background: $brand-yellow;
 	color: lighten($brand-black,50%);
 	&.menu-show {
 		overflow: hidden;
