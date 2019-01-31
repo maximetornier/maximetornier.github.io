@@ -16,7 +16,7 @@ body {
   line-height: 1.8;
   font-size: 16px;
   font-weight: 400;
-  background: #fff;
+  background: #FFE942;
   color: gray; }
   body.menu-show {
     overflow: hidden;
@@ -34,13 +34,13 @@ body {
     overflow-y: hidden; }
 
 a {
-  color: #F9CE00;
+  color: #FFB739;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
   a:hover {
     text-decoration: underline;
-    color: #F9CE00; }
+    color: #FFB739; }
   a:focus, a:active {
     outline: none; }
 
@@ -206,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
           outline: none;
           text-decoration: none; }
       #colorlib-main-nav ul li.active a {
-        color: #F9CE00; }
+        color: #FFB739; }
   #colorlib-main-nav .form-group {
     margin-bottom: 40px;
     position: relative;
@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     border-radius: 0;
-    background: #F9CE00;
+    background: #FFB739;
     color: #fff;
     border: none;
     padding: 16px; }
@@ -318,12 +318,21 @@ header {
       font-weight: 700;
       letter-spacing: 10px;
       display: block;
-      text-align: center; }
+      text-align: left; }
       header .colorlib-navbar-brand .colorlib-logo:hover {
         text-decoration: none !important; }
       header .colorlib-navbar-brand .colorlib-logo:active, header .colorlib-navbar-brand .colorlib-logo:focus {
         outline: none;
         text-decoration: none; }
+    header .colorlib-navbar-brand .colorlib-sublogo {
+      font-size: 13px;
+      text-transform: uppercase;
+      //color: #000;
+      // font-family: "Playfair Display", Georgia, serif;
+      letter-spacing: 9.2px;
+      margin-top: -10px;
+      display: block;
+      text-align: left; }
 
 #colorlib-services,
 #colorlib-contact,
@@ -376,8 +385,9 @@ header {
       bottom: 0;
       left: 0;
       right: 0;
-      font-size: 220px;
+      font-size: 70px;
       text-align: right;
+      margin-right: 1em;
       color: #f2f2f2;
       font-weight: 700; }
       @media screen and (max-width: 768px) {
@@ -458,7 +468,7 @@ header {
     #colorlib-hero .owl-theme .owl-controls .owl-nav [class*=owl-] i {
       border: none; }
     #colorlib-hero .owl-theme .owl-controls .owl-nav [class*=owl-]:hover {
-      background: #F9CE00;
+      background: #FFB739;
       border: none; }
   #colorlib-hero .owl-carousel .owl-controls .owl-nav .owl-next,
   #colorlib-hero .owl-carousel .owl-controls .owl-nav .owl-prev {
@@ -816,9 +826,9 @@ header {
     outline: none !important; }
 
 .btn-primary {
-  background: #F9CE00;
+  background: #FFB739;
   color: #fff;
-  border: 2px solid #F9CE00; }
+  border: 2px solid #FFB739; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     background: #ffd614 !important;
     border-color: #ffd614 !important; }
@@ -827,7 +837,7 @@ header {
     color: #4d4d4d;
     border: 1px solid #d9d9d9; }
     .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-      background: #F9CE00;
+      background: #FFB739;
       color: #fff; }
 
 .btn-success {
@@ -1095,7 +1105,7 @@ input[type="text"] {
 
 .colorlib-social-icons i {
   font-size: 24px;
-  color: #F9CE00; }
+  color: #FFB739; }
 
 #colorlib-subscribe {
   padding: 5em 0; }
