@@ -59,7 +59,7 @@ span {
 
 h1, h2, h3, h4, h5, h6 {
   color: rgba(0, 0, 0, 0.8);
-  font-family: "Playfair Display", Georgia, serif;
+  //font-family: "Playfair Display", Georgia, serif;
   margin: 0 0 30px 0;
   line-height: 1.3; }
 
@@ -309,12 +309,14 @@ header {
     header {
       padding: 2em 0; } }
   header .colorlib-navbar-brand {
-    float: left; }
+    float: left; 
+    //margin-left:1em;
+     }
     header .colorlib-navbar-brand .colorlib-logo {
       font-size: 24px;
       text-transform: uppercase;
       color: #000;
-      font-family: "Playfair Display", Georgia, serif;
+      //font-family: "Playfair Display", Georgia, serif;
       font-weight: 700;
       letter-spacing: 10px;
       display: block;
@@ -329,10 +331,12 @@ header {
       text-transform: uppercase;
       //color: #000;
       // font-family: "Playfair Display", Georgia, serif;
-      letter-spacing: 9.2px;
+      letter-spacing: 5px;
       margin-top: -10px;
       display: block;
-      text-align: left; }
+      text-align: left; 
+      position:relative;    
+    }
 
 #colorlib-services,
 #colorlib-contact,
@@ -381,6 +385,7 @@ header {
       display: table-cell;
       vertical-align: middle; }
     #colorlib-hero .hero-flex .number {
+        font-family: "Playfair Display", Georgia, serif;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -468,7 +473,7 @@ header {
     #colorlib-hero .owl-theme .owl-controls .owl-nav [class*=owl-] i {
       border: none; }
     #colorlib-hero .owl-theme .owl-controls .owl-nav [class*=owl-]:hover {
-      background: #FFB739;
+      background: #FFE9E3;
       border: none; }
   #colorlib-hero .owl-carousel .owl-controls .owl-nav .owl-next,
   #colorlib-hero .owl-carousel .owl-controls .owl-nav .owl-prev {
@@ -499,6 +504,7 @@ header {
     display: block;
     overflow: scroll; }
   .about-flex .about-img {
+      background-position:center top;
     z-index: -1; }
   .about-flex .display-t {
     display: table; }
@@ -554,6 +560,7 @@ header {
     background: #000; }
 
 .bold {
+    font-family: "Playfair Display", Georgia, serif;
   position: absolute;
   top: 0;
   left: 0;
