@@ -403,7 +403,8 @@ header {
       width: 100%; }
     #colorlib-hero .hero-flex .display-tc {
       display: table-cell;
-      vertical-align: middle; }
+      vertical-align: middle; 
+    }
     #colorlib-hero .hero-flex .number {
         font-family: "Playfair Display", Georgia, serif;
       position: absolute;
@@ -1081,10 +1082,12 @@ font-size: 13px;
   margin-bottom: 4em; }
 
 .row-pb-md {
-  margin-bottom: 3em; }
+  margin-bottom: 3em;
+margin-top: 3em;}
 
 .row-pb-md {
-  margin-bottom: 3em; }
+  margin-bottom: 3em; 
+    margin-top: 3em;}
 
 .col-pb-sm {
   margin-bottom: 5em !important; }
