@@ -747,6 +747,17 @@ display:block }
       padding: 7px;
       text-decoration: none; }
 
+ .btn-view2 {
+      font-size: 13px;
+      letter-spacing: 7px;
+      color: #000;
+      text-transform: uppercase;
+      border: 1px solid #000;
+      padding: 7px;
+      text-decoration: none;
+        }
+
+
 .work-single-flex {
   width: 100%;
   display: -webkit-box;
