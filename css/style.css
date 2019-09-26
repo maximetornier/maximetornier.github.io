@@ -624,9 +624,9 @@ header {
 position: absolute;
 bottom: 1em;
 left: 2em;
-font-size: 8px;
+font-size: 10px;
 color: #000;
-
+line-height: 100%;
 }
 
 
@@ -957,7 +957,8 @@ font-size: 13px;
     width: 90%;
     background: #fff;
     padding: 1em;
-    padding-top: 2em; }
+    padding-top: 2em; 
+  }
     .article .desc .meta {
       position: absolute;
       top: -60px;
@@ -1385,3 +1386,31 @@ input[type="text"] {
 
 .js .animate-box {
   opacity: 0; }
+
+#mc_embed_signup{background:#fff; clear:left; padding-top: 20px; }
+
+input[type=email] {
+     margin-top: 10px;
+      font-size: 13px;
+      letter-spacing: 4px;
+     line-height: 100%;
+      color: #000;
+      text-transform: uppercase;
+      border: 1px solid #000;
+      padding: 7px;
+      text-decoration: none;
+    width: 100%;
+        }
+
+ input[type=submit] {
+     margin-top: 10px;
+      font-size: 13px;
+      letter-spacing: 7px;
+     line-height: 100%;
+      color: #000;
+      text-transform: uppercase;
+      border: 1px solid #000;
+      padding: 7px;
+      text-decoration: none;
+        }
+        
