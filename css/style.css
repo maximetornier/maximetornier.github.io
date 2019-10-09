@@ -1447,3 +1447,17 @@ position: absolute;
 text-align: left;
 bottom: 4em;
 }
+
+ .desc ul {
+      margin: 0;
+      padding: 0; }
+      .desc ul li {
+        list-style: none;
+        position: relative;
+        padding-left: 30px;
+        
+        margin-bottom: 10px; }
+        .desc ul li i {
+          position: absolute;
+          top: 5px;
+          left: 0; }
