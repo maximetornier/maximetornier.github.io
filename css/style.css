@@ -1257,6 +1257,28 @@ margin-top: 3em;}
     .contact-info li a {
       color: #000; }
 
+.contact-info1 {
+    display: block;
+}
+  .contact-info1 li {
+    left: 30px;
+    line-height: 3;
+    position: absolute;
+    margin-bottom: 0px;
+
+  }
+    .contact-info1 i {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 24px;
+      line-height: 2;
+      color: rgba(0, 0, 0, 0.5); 
+      position: absolute;
+    }
+
+    .contact-info1 li a {
+      color: #000; }
+
 .form-control {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
@@ -1403,6 +1425,7 @@ input[type=email] {
         }
 
  input[type=submit] {
+     
      margin-top: 10px;
       font-size: 13px;
       letter-spacing: 7px;
@@ -1413,4 +1436,9 @@ input[type=email] {
       padding: 7px;
       text-decoration: none;
         }
-        
+    
+.Part-text {
+
+    padding-bottom:20px; 
+    line-height=100%;
+}
