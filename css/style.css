@@ -714,10 +714,7 @@ display:block }
     text-align: left;
     margin-right: 0;
     padding-left: 0; }
-    @media screen and (max-width: 768px) {
-      .work-entry-flex1 .text-inner-right {
-        text-align: left;
-        margin-left: -4em; } }
+   
   .work-entry-flex1 .text-inner-left {
     text-align: left;
     margin-left: -4em; }
@@ -725,16 +722,12 @@ display:block }
     display: block;
     padding: 2em 2em 1em 2em;
     background: rgba(255, 255, 255, 1); }
-    @media screen and (max-width: 768px) {
-      .work-entry-flex1 .text-inner {
-        padding: 1em; } }
+    
     .work-entry-flex1 .text-inner h2 {
       font-size: 40px;
       font-weight: 700;
       letter-spacing: 2px; }
-      @media screen and (max-width: 768px) {
-        .work-entry-flex1 .text-inner h2 {
-          font-size: 24px; } }
+
       .work-entry-flex1 .text-inner h2 a {
         color: #000;
         text-decoration: none; }
