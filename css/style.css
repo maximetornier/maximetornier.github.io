@@ -16,8 +16,8 @@ body {
   line-height: 1.8;
   font-size: 16px;
   font-weight: 400;
-  background: #FFE942;
-  color: gray; }
+  background: #BF6999;
+  color: #302F40; }
   body.menu-show {
     overflow: hidden;
     position: fixed;
@@ -327,7 +327,7 @@ header {
     header .colorlib-navbar-brand .colorlib-logo {
       font-size: 24px;
       text-transform: uppercase;
-      color: #000;
+      color: #302F40;
       //font-family: "Playfair Display", Georgia, serif;
       font-weight: 700;
       letter-spacing: 10px;
@@ -1155,11 +1155,11 @@ margin-top: 3em;}
     *display: inline;
     width: 20px;
     height: 2px;
-    color: #000;
+    color: #302F40;
     font: bold 14px/.4 Helvetica;
     text-transform: uppercase;
     text-indent: -55px;
-    background: #000;
+    background: #302F40;
     -webkit-transition: all .2s ease-out;
     -o-transition: all .2s ease-out;
     transition: all .2s ease-out; }
@@ -1170,7 +1170,7 @@ margin-top: 3em;}
       content: '';
       width: 20px;
       height: 2px;
-      background: #000;
+      background: #302F40;
       position: absolute;
       left: 0;
       -webkit-transition: 0.2s;
