@@ -631,6 +631,15 @@ color: #000;
 line-height: 100%;
 }
 
+.image-credit1 {
+position: absolute;
+bottom: 1em;
+left: 1em;
+font-size: 10px;
+color: #000;
+line-height: 100%;
+}
+
 .logo-art {
 position: absolute;
 bottom: 1em;
