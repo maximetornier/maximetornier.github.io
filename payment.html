@@ -54,16 +54,25 @@
 
 
 <body>
+<header>
+			<div class="container">
+
+						<div class="colorlib-navbar-brand">
+							<a class="colorlib-logo" href="index.html">Yellowfields</a>
+                            <!--<div class="colorlib-sublogo">Contemporary spaces</div>-->
+						</div>
+
+			</div>
+</header>
     <div class="sr-root">
       <div class="sr-main">
         <section class="container1">
           <div>
-            <h1>Single photo</h1>
-            <h4>Purchase a Pasha original photo</h4>
+            <h1>Book 1</h1>
+            <h4>Purchase Book 1</h4>
             <div class="pasha-image">
               <img
-                src="https://picsum.photos/280/320?random=4"
-                width="140"
+                src="images/books-cover.jpg"
                 height="160"
               />
             </div>
@@ -78,7 +87,7 @@
           <p class="sr-legal-text">Number of copies (max 10)</p>
 
           <button id="basic-photo-button">
-            Buy for $<span id="total">5</span>.00
+            Buy for £<span1 id="total">12</span1>.00
           </button>
         </section>
         <div id="error-message"></div>
@@ -139,7 +148,7 @@
         var quantity = isAdding ? currentQuantity + 1 : currentQuantity - 1;
 
         inputEl.value = quantity;
-        document.getElementById("total").textContent = quantity * 5;
+        document.getElementById("total").textContent = quantity * 12;
 
         // Disable the button if the customers hits the max or min
         if (quantity === MIN_PHOTOS) {
