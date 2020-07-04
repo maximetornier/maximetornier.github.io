@@ -68,7 +68,7 @@
     
        
   <div class="pay_intro"> 
-      v4 / Select below. All payments are proceeded through the secure Stripe platform. 
+      v5 / Select below. All payments are proceeded through the secure Stripe platform. 
         </div>
         
 <div class="book"> 
@@ -178,7 +178,7 @@
         stripe
           .redirectToCheckout({
             mode: 'payment',
-            lineItems: [{ price: PRICE_ID, quantity: quantity }],
+            lineItems: [{ price: PRICE_ID_v1_1, quantity: quantity }],
             successUrl:
               DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
             cancelUrl: DOMAIN + "/canceled.html",
