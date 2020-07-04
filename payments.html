@@ -151,14 +151,12 @@
         );
       }
 
-      var MIN_PHOTOS = 1;
-      var MAX_PHOTOS = 10;
 
       var stripe = Stripe(PUBLISHABLE_KEY);
 
       var buyButton_v1_1 = document.getElementById("buy_Button_v1_1");
-        var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
-        var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
+      var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
+      var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
     
       document
         .getElementById("quantity-input")
@@ -172,37 +170,7 @@
           }
         });
 
-      var updateQuantity = function(evt) {
-        if (evt && evt.type === "keypress" && evt.keyCode !== 13) {
-          return;
-        }
 
-        var isAdding = evt.target.id === "add";
-        var inputEl = document.getElementById("quantity-input");
-        var currentQuantity = parseInt(inputEl.value);
-
-        document.getElementById("add").disabled = false;
-        document.getElementById("subtract").disabled = false;
-
-        var quantity = isAdding ? currentQuantity + 1 : currentQuantity - 1;
-
-        inputEl.value = quantity;
-        document.getElementById("total").textContent = quantity * 12;
-
-        // Disable the button if the customers hits the max or min
-        if (quantity === MIN_PHOTOS) {
-          document.getElementById("subtract").disabled = true;
-        }
-        if (quantity === MAX_PHOTOS) {
-          document.getElementById("add").disabled = true;
-        }
-      };
-
-      Array.from(document.getElementsByClassName("increment-btn")).forEach(
-        element => {
-          element.addEventListener("click", updateQuantity);
-        }
-      );
 
       // Handle any errors from Checkout
       var handleResult = function(result) {
@@ -211,6 +179,7 @@
           displayError.textContent = result.error.message;
         }
       };
+        
 // Button 1
       buyButton_v1_1.addEventListener("click", function() {
         var quantity = 1
