@@ -64,67 +64,18 @@
 
 			</div>
 </header>
-    <div class="sr-root"> 
-    
-  <div class="pay_intro"> 
-      Select below. All payments are proceeded through the secure Stripe platform. 
-        </div>
-        <button id="buy_Button_v1_1">
-            Buy 1
-        </button>
-<div class="book"> 
-    <div class="columns_t">
-     
-        VOlume 1 : OVERBURDEN
-    
-    </div>
+    <div class="sr-root">
 
-    <div class="columns">
-      <ul class="price">
-        <button id="buy_Button_v1_1">
-            Buy 1
-        </button>
-        <li class="price_des">£10 + £2 pp</li>
-      </ul>
+       
+        
+        
+          <button id="basic-photo-button">
+            Buy for £<span1 id="total">10</span1>.00
+          </button>
+        
+       
+      </div>
     </div>
-
-       <div class="columns">
-      <ul class="price">
-        <button id="buy_Button_v1_2">
-            Buy 2
-        </button>
-        <li class="price_des">£20 + £2 pp</li>
-      </ul>
-    </div>
-</div>
-    
-    <div class="book"> 
-    <div class="columns">
-      <ul class="intro">
-        VOlume 1 : OVERBURDEN
-      </ul>
-    </div>
-
-    <div class="columns">
-      <ul class="price">
-        <button id="buy_Button_v2_1">
-            Buy 1
-        </button>
-        <li class="price_des">£10 + £2 pp</li>
-      </ul>
-    </div>
-
-       <div class="columns">
-      <ul class="price">
-        <button id="basic-photo-button">
-            Buy 2
-        </button>
-        <li class="price_des">£20 + £2 pp</li>
-      </ul>
-    </div>
-</div>
-  </div>
-    
 
     <script>
       // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
@@ -133,14 +84,7 @@
       var DOMAIN = window.location.origin;
       // Replace with a Price for your own product (created either in the Stripe Dashboard or with the API)
       // You can also supply a SKU or Plan ID for 
-        var PRICE_ID_v1_1 = "price_1H1AMeJvV0Sk04itLiQaD0tj";
-        var PRICE_ID_v1_2 = "price_1H1AN2JvV0Sk04itdr4Bz5bx";
-        var PRICE_ID_v2_1 = "price_1H1ANNJvV0Sk04itmlEAxNHu";
-        var PRICE_ID_v2_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
-        var PRICE_ID_v3_1 = "price_1H17XGJvV0Sk04iteWcPFhde";
-        var PRICE_ID_v3_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
-        var PRICE_ID_bundle = "price_1H17XGJvV0Sk04iteWcPFhde";
-    
+      var PRICE_ID = "price_1H17XGJvV0Sk04iteWcPFhde";
 
       if (PUBLISHABLE_KEY === "pk_1234") {
         console.log(
@@ -154,13 +98,12 @@
         );
       }
 
+      var MIN_PHOTOS = 1;
+      var MAX_PHOTOS = 10;
 
       var stripe = Stripe(PUBLISHABLE_KEY);
 
-      var buyButton_v1_1 = document.getElementById("buy_Button_v1_1");
-      var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
-      var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
-    
+      var basicPhotoButton = document.getElementById("basic-photo-button");
       document
         .getElementById("quantity-input")
         .addEventListener("change", function(evt) {
@@ -173,7 +116,37 @@
           }
         });
 
+      var updateQuantity = function(evt) {
+        if (evt && evt.type === "keypress" && evt.keyCode !== 13) {
+          return;
+        }
 
+        var isAdding = evt.target.id === "add";
+        var inputEl = document.getElementById("quantity-input");
+        var currentQuantity = parseInt(inputEl.value);
+
+        document.getElementById("add").disabled = false;
+        document.getElementById("subtract").disabled = false;
+
+        var quantity = isAdding ? currentQuantity + 1 : currentQuantity - 1;
+
+        inputEl.value = quantity;
+        document.getElementById("total").textContent = quantity * 12;
+
+        // Disable the button if the customers hits the max or min
+        if (quantity === MIN_PHOTOS) {
+          document.getElementById("subtract").disabled = true;
+        }
+        if (quantity === MAX_PHOTOS) {
+          document.getElementById("add").disabled = true;
+        }
+      };
+
+      Array.from(document.getElementsByClassName("increment-btn")).forEach(
+        element => {
+          element.addEventListener("click", updateQuantity);
+        }
+      );
 
       // Handle any errors from Checkout
       var handleResult = function(result) {
@@ -182,53 +155,18 @@
           displayError.textContent = result.error.message;
         }
       };
-        
-// Button 1
-      buyButton_v1_1.addEventListener("click", function() {
-        var quantity = 1
+
+      basicPhotoButton.addEventListener("click", function() {
+        var quantity = parseInt(
+          document.getElementById("quantity-input").value
+        );
 
         // Make the call to Stripe.js to redirect to the checkout page
         // with the current quantity
         stripe
           .redirectToCheckout({
             mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v1_1, quantity: quantity }],
-            successUrl:
-              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/canceled.html",
-            shippingAddressCollection: {allowedCountries: ['GB'],}
-          })
-          .then(handleResult);
-      });
-        
-// Button 2
-      buyButton_v1_2.addEventListener("click", function() {
-        var quantity = 1
-
-        // Make the call to Stripe.js to redirect to the checkout page
-        // with the current quantity
-        stripe
-          .redirectToCheckout({
-            mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v1_2, quantity: quantity }],
-            successUrl:
-              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/canceled.html",
-            shippingAddressCollection: {allowedCountries: ['GB'],}
-          })
-          .then(handleResult);
-      });
-
-// Button 3
-      buyButton_v2_1.addEventListener("click", function() {
-        var quantity = 1
-
-        // Make the call to Stripe.js to redirect to the checkout page
-        // with the current quantity
-        stripe
-          .redirectToCheckout({
-            mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v2_1, quantity: quantity }],
+            lineItems: [{ price: PRICE_ID, quantity: quantity }],
             successUrl:
               DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
             cancelUrl: DOMAIN + "/canceled.html",
