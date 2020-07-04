@@ -65,12 +65,12 @@
 			</div>
 </header>
     <div class="sr-root">
-        v3
+        v4
       <div class="sr-main">
         <section class="container1">
           
 
-            <input type="number" id="quantity-input" min="1" value="1" />
+           
 
 
           <button id="basic-photo-button">
@@ -108,49 +108,7 @@
       var stripe = Stripe(PUBLISHABLE_KEY);
 
       var basicPhotoButton = document.getElementById("basic-photo-button");
-      document
-        .getElementById("quantity-input")
-        .addEventListener("change", function(evt) {
-          // Ensure customers only buy between 1 and 10 photos
-          if (evt.target.value < MIN_PHOTOS) {
-            evt.target.value = MIN_PHOTOS;
-          }
-          if (evt.target.value > MAX_PHOTOS) {
-            evt.target.value = MAX_PHOTOS;
-          }
-        });
 
-      var updateQuantity = function(evt) {
-        if (evt && evt.type === "keypress" && evt.keyCode !== 13) {
-          return;
-        }
-
-        var isAdding = evt.target.id === "add";
-        var inputEl = document.getElementById("quantity-input");
-        var currentQuantity = parseInt(inputEl.value);
-
-        document.getElementById("add").disabled = false;
-        document.getElementById("subtract").disabled = false;
-
-        var quantity = isAdding ? currentQuantity + 1 : currentQuantity - 1;
-
-        inputEl.value = quantity;
-        document.getElementById("total").textContent = quantity * 12;
-
-        // Disable the button if the customers hits the max or min
-        if (quantity === MIN_PHOTOS) {
-          document.getElementById("subtract").disabled = true;
-        }
-        if (quantity === MAX_PHOTOS) {
-          document.getElementById("add").disabled = true;
-        }
-      };
-
-      Array.from(document.getElementsByClassName("increment-btn")).forEach(
-        element => {
-          element.addEventListener("click", updateQuantity);
-        }
-      );
 
       // Handle any errors from Checkout
       var handleResult = function(result) {
