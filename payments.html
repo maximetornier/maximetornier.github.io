@@ -64,35 +64,64 @@
 
 			</div>
 </header>
-    <div class="sr-root">
-      <div class="sr-main">
-        <section class="container1">
-          <div>
-            <h1>Book 1</h1>
-            <h4>Purchase Book 1</h4>
-            <div class="pasha-image">
-              <img
-                src="images/books-cover.jpg"
-                height="160"
-              />
-            </div>
-          </div>
-          <div class="quantity-setter">
-            <button class="increment-btn" id="subtract" disabled>
-              -
-            </button>
-            <input type="number" id="quantity-input" min="1" value="1" />
-            <button class="increment-btn" id="add">+</button>
-          </div>
-          <p class="sr-legal-text">Number of copies (max 10)</p>
-
-          <button id="basic-photo-button">
-            Buy for £<span1 id="total">10</span1>.00
-          </button>
-        </section>
-        <div id="error-message"></div>
-      </div>
+    <div class="sr-root"> 
+    
+  <div class="pay_intro"> 
+      Select below. All payments are proceeded through the secure Stripe platform. 
+        </div>
+<div class="book"> 
+    <div class="columns_t">
+     
+        VOlume 1 : OVERBURDEN
+    
     </div>
+
+    <div class="columns">
+      <ul class="price">
+        <button id="buy_Button_v1_1">
+            Buy 1
+        </button>
+        <li class="price_des">£10 + £2 pp</li>
+      </ul>
+    </div>
+
+       <div class="columns">
+      <ul class="price">
+        <button id="buy_Button_v1_2">
+            Buy 2
+        </button>
+        <li class="price_des">£20 + £2 pp</li>
+      </ul>
+    </div>
+</div>
+    
+    <div class="book"> 
+    <div class="columns">
+      <ul class="intro">
+        VOlume 1 : OVERBURDEN
+      </ul>
+    </div>
+
+    <div class="columns">
+      <ul class="price">
+        <button id="buy_Button_v2_1">
+            Buy 1
+        </button>
+        <li class="price_des">£10 + £2 pp</li>
+      </ul>
+    </div>
+
+       <div class="columns">
+      <ul class="price">
+        <button id="basic-photo-button">
+            Buy 2
+        </button>
+        <li class="price_des">£20 + £2 pp</li>
+      </ul>
+    </div>
+</div>
+  </div>
+    
 
     <script>
       // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
@@ -101,7 +130,14 @@
       var DOMAIN = window.location.origin;
       // Replace with a Price for your own product (created either in the Stripe Dashboard or with the API)
       // You can also supply a SKU or Plan ID for 
-      var PRICE_ID = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_v1_1 = "price_1H1AMeJvV0Sk04itLiQaD0tj";
+        var PRICE_ID_v1_2 = "price_1H1AN2JvV0Sk04itdr4Bz5bx";
+        var PRICE_ID_v2_1 = "price_1H1ANNJvV0Sk04itmlEAxNHu";
+        var PRICE_ID_v2_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_v3_1 = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_v3_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_bundle = "price_1H17XGJvV0Sk04iteWcPFhde";
+    
 
       if (PUBLISHABLE_KEY === "pk_1234") {
         console.log(
@@ -120,7 +156,10 @@
 
       var stripe = Stripe(PUBLISHABLE_KEY);
 
-      var basicPhotoButton = document.getElementById("basic-photo-button");
+      var buyButton_v1_1 = document.getElementById("buy_Button_v1_1");
+        var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
+        var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
+    
       document
         .getElementById("quantity-input")
         .addEventListener("change", function(evt) {
@@ -172,18 +211,52 @@
           displayError.textContent = result.error.message;
         }
       };
-
-      basicPhotoButton.addEventListener("click", function() {
-        var quantity = parseInt(
-          document.getElementById("quantity-input").value
-        );
+// Button 1
+      buyButton_v1_1.addEventListener("click", function() {
+        var quantity = 1
 
         // Make the call to Stripe.js to redirect to the checkout page
         // with the current quantity
         stripe
           .redirectToCheckout({
             mode: 'payment',
-            lineItems: [{ price: PRICE_ID, quantity: quantity }],
+            lineItems: [{ price: PRICE_ID_v1_1, quantity: quantity }],
+            successUrl:
+              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/canceled.html",
+            shippingAddressCollection: {allowedCountries: ['GB'],}
+          })
+          .then(handleResult);
+      });
+        
+// Button 2
+      buyButton_v1_2.addEventListener("click", function() {
+        var quantity = 1
+
+        // Make the call to Stripe.js to redirect to the checkout page
+        // with the current quantity
+        stripe
+          .redirectToCheckout({
+            mode: 'payment',
+            lineItems: [{ price: PRICE_ID_v1_2, quantity: quantity }],
+            successUrl:
+              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/canceled.html",
+            shippingAddressCollection: {allowedCountries: ['GB'],}
+          })
+          .then(handleResult);
+      });
+
+// Button 3
+      buyButton_v2_1.addEventListener("click", function() {
+        var quantity = 1
+
+        // Make the call to Stripe.js to redirect to the checkout page
+        // with the current quantity
+        stripe
+          .redirectToCheckout({
+            mode: 'payment',
+            lineItems: [{ price: PRICE_ID_v2_1, quantity: quantity }],
             successUrl:
               DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
             cancelUrl: DOMAIN + "/canceled.html",
