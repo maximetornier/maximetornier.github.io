@@ -161,6 +161,17 @@
       var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
       var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
     
+      document
+        .getElementById("quantity-input")
+        .addEventListener("change", function(evt) {
+          // Ensure customers only buy between 1 and 10 photos
+          if (evt.target.value < MIN_PHOTOS) {
+            evt.target.value = MIN_PHOTOS;
+          }
+          if (evt.target.value > MAX_PHOTOS) {
+            evt.target.value = MAX_PHOTOS;
+          }
+        });
 
 
 
