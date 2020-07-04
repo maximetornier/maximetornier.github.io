@@ -65,7 +65,7 @@
 			</div>
 </header>
     <div class="sr-root">
-        v8
+        v9
       <div class="sr-main">
         <section class="container1">
           
@@ -103,21 +103,12 @@
         );
       }
 
-      var MIN_PHOTOS = 1;
-      var MAX_PHOTOS = 10;
+
 
       var stripe = Stripe(PUBLISHABLE_KEY);
 
       var basicPhotoButton = document.getElementById("basic-photo-button");
-      
-
-
-      Array.from(document.getElementsByClassName("increment-btn")).forEach(
-        element => {
-          element.addEventListener("click", updateQuantity);
-        }
-      );
-
+  
       // Handle any errors from Checkout
       var handleResult = function(result) {
         if (result.error) {
