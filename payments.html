@@ -68,7 +68,7 @@
     
        
   <div class="pay_intro"> 
-      v2 / Select below. All payments are proceeded through the secure Stripe platform. 
+      v3 / Select below. All payments are proceeded through the secure Stripe platform. 
         </div>
         
 <div class="book"> 
@@ -80,7 +80,7 @@
 
     <div class="columns">
       <ul class="price">
-        <button id="buy_Button_v1_1">
+        <button id="basic-photo-button">
             Buy 1
           </button>
         <li class="price_des">£10 + £2 pp</li>
@@ -157,7 +157,7 @@
 
       var stripe = Stripe(PUBLISHABLE_KEY);
 
-      var buyButton_v1_1 = document.getElementById("buy_Button_v1_1");
+      var buyButton_v1_1 = document.getElementById("basic-photo-button");
       var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
       var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
     
@@ -170,7 +170,7 @@
         }
       };
 
-      basicPhotoButton.addEventListener("click", function() {
+      buyButton_v1_1.addEventListener("click", function() {
         var quantity = 1
 
         // Make the call to Stripe.js to redirect to the checkout page
