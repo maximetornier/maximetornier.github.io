@@ -65,7 +65,7 @@
 			</div>
 </header>
     <div class="sr-root">
-        v6
+        v7
       <div class="sr-main">
         <section class="container1">
           
@@ -109,17 +109,8 @@
       var stripe = Stripe(PUBLISHABLE_KEY);
 
       var basicPhotoButton = document.getElementById("basic-photo-button");
-      document
-        .getElementById("quantity-input")
-        .addEventListener("change", function(evt) {
-          // Ensure customers only buy between 1 and 10 photos
-          if (evt.target.value < MIN_PHOTOS) {
-            evt.target.value = MIN_PHOTOS;
-          }
-          if (evt.target.value > MAX_PHOTOS) {
-            evt.target.value = MAX_PHOTOS;
-          }
-        });
+      
+
 
       var updateQuantity = function(evt) {
         if (evt && evt.type === "keypress" && evt.keyCode !== 13) {
