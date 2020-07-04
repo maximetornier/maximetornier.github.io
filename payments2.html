@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Yellowfields</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+	</head>
+
+
+
+<body>
+<header>
+			<div class="container">
+
+						<div class="colorlib-navbar-brand">
+							<a class="colorlib-logo" href="index.html">Yellowfields</a>
+                            <!--<div class="colorlib-sublogo">Contemporary spaces</div>-->
+						</div>
+
+			</div>
+</header>
+    <div class="sr-root"> 
+    
+  <div class="pay_intro"> 
+      Select below. All payments are proceeded through the secure Stripe platform. 
+        </div>
+        <button id="buy_Button_v1_1">
+            Buy 1
+        </button>
+<div class="book"> 
+    <div class="columns_t">
+     
+        VOlume 1 : OVERBURDEN
+    
+    </div>
+
+    <div class="columns">
+      <ul class="price">
+        <button id="buy_Button_v1_1">
+            Buy 1
+        </button>
+        <li class="price_des">£10 + £2 pp</li>
+      </ul>
+    </div>
+
+       <div class="columns">
+      <ul class="price">
+        <button id="buy_Button_v1_2">
+            Buy 2
+        </button>
+        <li class="price_des">£20 + £2 pp</li>
+      </ul>
+    </div>
+</div>
+    
+    <div class="book"> 
+    <div class="columns">
+      <ul class="intro">
+        VOlume 1 : OVERBURDEN
+      </ul>
+    </div>
+
+    <div class="columns">
+      <ul class="price">
+        <button id="buy_Button_v2_1">
+            Buy 1
+        </button>
+        <li class="price_des">£10 + £2 pp</li>
+      </ul>
+    </div>
+
+       <div class="columns">
+      <ul class="price">
+        <button id="basic-photo-button">
+            Buy 2
+        </button>
+        <li class="price_des">£20 + £2 pp</li>
+      </ul>
+    </div>
+</div>
+  </div>
+    
+
+    <script>
+      // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
+      var PUBLISHABLE_KEY = "pk_test_51GtbgiJvV0Sk04itrLRZ4ckAFF3ueoMuzjDNrLTKJJAf5yCU0ULrp8zgeTSnXXzIvcQwUuMGzkKBnjh6sA3T5sEE00rgE2fjmv";
+      // Replace with the domain you want your users to be redirected back to after payment
+      var DOMAIN = window.location.origin;
+      // Replace with a Price for your own product (created either in the Stripe Dashboard or with the API)
+      // You can also supply a SKU or Plan ID for 
+        var PRICE_ID_v1_1 = "price_1H1AMeJvV0Sk04itLiQaD0tj";
+        var PRICE_ID_v1_2 = "price_1H1AN2JvV0Sk04itdr4Bz5bx";
+        var PRICE_ID_v2_1 = "price_1H1ANNJvV0Sk04itmlEAxNHu";
+        var PRICE_ID_v2_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_v3_1 = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_v3_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_bundle = "price_1H17XGJvV0Sk04iteWcPFhde";
+    
+
+      if (PUBLISHABLE_KEY === "pk_1234") {
+        console.log(
+          "Replace the hardcoded publishable key with your own publishable key: https://dashboard.stripe.com/test/apikeys"
+        );
+      }
+
+      if (PRICE_ID === "price_1234") {
+        console.log(
+          "Replace the hardcoded SKU ID with your own SKU: https://stripe.com/docs/api/skus"
+        );
+      }
+
+
+      var stripe = Stripe(PUBLISHABLE_KEY);
+
+      var buyButton_v1_1 = document.getElementById("buy_Button_v1_1");
+      var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
+      var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
+    
+      document
+        .getElementById("quantity-input")
+        .addEventListener("change", function(evt) {
+          // Ensure customers only buy between 1 and 10 photos
+          if (evt.target.value < MIN_PHOTOS) {
+            evt.target.value = MIN_PHOTOS;
+          }
+          if (evt.target.value > MAX_PHOTOS) {
+            evt.target.value = MAX_PHOTOS;
+          }
+        });
+
+
+
+      // Handle any errors from Checkout
+      var handleResult = function(result) {
+        if (result.error) {
+          var displayError = document.getElementById("error-message");
+          displayError.textContent = result.error.message;
+        }
+      };
+        
+// Button 1
+      buyButton_v1_1.addEventListener("click", function() {
+        var quantity = 1
+
+        // Make the call to Stripe.js to redirect to the checkout page
+        // with the current quantity
+        stripe
+          .redirectToCheckout({
+            mode: 'payment',
+            lineItems: [{ price: PRICE_ID_v1_1, quantity: quantity }],
+            successUrl:
+              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/canceled.html",
+            shippingAddressCollection: {allowedCountries: ['GB'],}
+          })
+          .then(handleResult);
+      });
+        
+// Button 2
+      buyButton_v1_2.addEventListener("click", function() {
+        var quantity = 1
+
+        // Make the call to Stripe.js to redirect to the checkout page
+        // with the current quantity
+        stripe
+          .redirectToCheckout({
+            mode: 'payment',
+            lineItems: [{ price: PRICE_ID_v1_2, quantity: quantity }],
+            successUrl:
+              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/canceled.html",
+            shippingAddressCollection: {allowedCountries: ['GB'],}
+          })
+          .then(handleResult);
+      });
+
+// Button 3
+      buyButton_v2_1.addEventListener("click", function() {
+        var quantity = 1
+
+        // Make the call to Stripe.js to redirect to the checkout page
+        // with the current quantity
+        stripe
+          .redirectToCheckout({
+            mode: 'payment',
+            lineItems: [{ price: PRICE_ID_v2_1, quantity: quantity }],
+            successUrl:
+              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/canceled.html",
+            shippingAddressCollection: {allowedCountries: ['GB'],}
+          })
+          .then(handleResult);
+      });
+    </script>
+  </body>
+    
+    
+    
+</html>
+
