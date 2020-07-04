@@ -68,7 +68,7 @@
     
        
   <div class="pay_intro"> 
-      Select below. All payments are proceeded through the secure Stripe platform. 
+      v2 / Select below. All payments are proceeded through the secure Stripe platform. 
         </div>
         
 <div class="book"> 
@@ -80,7 +80,7 @@
 
     <div class="columns">
       <ul class="price">
-        <button id="basic-photo-button">
+        <button id="buy_Button_v1_1">
             Buy 1
           </button>
         <li class="price_des">£10 + £2 pp</li>
@@ -133,6 +133,13 @@
       // Replace with a Price for your own product (created either in the Stripe Dashboard or with the API)
       // You can also supply a SKU or Plan ID for 
       var PRICE_ID = "price_1H17XGJvV0Sk04iteWcPFhde";
+      var PRICE_ID_v1_1 = "price_1H1AMeJvV0Sk04itLiQaD0tj";
+        var PRICE_ID_v1_2 = "price_1H1AN2JvV0Sk04itdr4Bz5bx";
+        var PRICE_ID_v2_1 = "price_1H1ANNJvV0Sk04itmlEAxNHu";
+        var PRICE_ID_v2_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_v3_1 = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_v3_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_bundle = "price_1H17XGJvV0Sk04iteWcPFhde";
 
       if (PUBLISHABLE_KEY === "pk_1234") {
         console.log(
@@ -150,7 +157,10 @@
 
       var stripe = Stripe(PUBLISHABLE_KEY);
 
-      var basicPhotoButton = document.getElementById("basic-photo-button");
+      var buyButton_v1_1 = document.getElementById("buy_Button_v1_1");
+      var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
+      var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
+    
   
       // Handle any errors from Checkout
       var handleResult = function(result) {
