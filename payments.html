@@ -126,21 +126,14 @@
   </div>
     
 
-    <script>
+<script>
       // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
       var PUBLISHABLE_KEY = "pk_test_51GtbgiJvV0Sk04itrLRZ4ckAFF3ueoMuzjDNrLTKJJAf5yCU0ULrp8zgeTSnXXzIvcQwUuMGzkKBnjh6sA3T5sEE00rgE2fjmv";
       // Replace with the domain you want your users to be redirected back to after payment
       var DOMAIN = window.location.origin;
       // Replace with a Price for your own product (created either in the Stripe Dashboard or with the API)
       // You can also supply a SKU or Plan ID for 
-        var PRICE_ID_v1_1 = "price_1H1AMeJvV0Sk04itLiQaD0tj";
-        var PRICE_ID_v1_2 = "price_1H1AN2JvV0Sk04itdr4Bz5bx";
-        var PRICE_ID_v2_1 = "price_1H1ANNJvV0Sk04itmlEAxNHu";
-        var PRICE_ID_v2_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
-        var PRICE_ID_v3_1 = "price_1H17XGJvV0Sk04iteWcPFhde";
-        var PRICE_ID_v3_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
-        var PRICE_ID_bundle = "price_1H17XGJvV0Sk04iteWcPFhde";
-    
+      var PRICE_ID = "price_1H17XGJvV0Sk04iteWcPFhde";
 
       if (PUBLISHABLE_KEY === "pk_1234") {
         console.log(
@@ -155,15 +148,11 @@
       }
 
 
+
       var stripe = Stripe(PUBLISHABLE_KEY);
 
-      var buyButton_v1_1 = document.getElementById("buy_Button_v1_1");
-      var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
-      var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
-    
-
-
-
+      var basicPhotoButton = document.getElementById("basic-photo-button");
+  
       // Handle any errors from Checkout
       var handleResult = function(result) {
         if (result.error) {
@@ -171,9 +160,8 @@
           displayError.textContent = result.error.message;
         }
       };
-        
-// Button 1
-      buyButton_v1_1.addEventListener("click", function() {
+
+      basicPhotoButton.addEventListener("click", function() {
         var quantity = 1
 
         // Make the call to Stripe.js to redirect to the checkout page
@@ -181,43 +169,7 @@
         stripe
           .redirectToCheckout({
             mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v1_1, quantity: quantity }],
-            successUrl:
-              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/canceled.html",
-            shippingAddressCollection: {allowedCountries: ['GB'],}
-          })
-          .then(handleResult);
-      });
-        
-// Button 2
-      buyButton_v1_2.addEventListener("click", function() {
-        var quantity = 1
-
-        // Make the call to Stripe.js to redirect to the checkout page
-        // with the current quantity
-        stripe
-          .redirectToCheckout({
-            mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v1_2, quantity: quantity }],
-            successUrl:
-              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/canceled.html",
-            shippingAddressCollection: {allowedCountries: ['GB'],}
-          })
-          .then(handleResult);
-      });
-
-// Button 3
-      buyButton_v2_1.addEventListener("click", function() {
-        var quantity = 1
-
-        // Make the call to Stripe.js to redirect to the checkout page
-        // with the current quantity
-        stripe
-          .redirectToCheckout({
-            mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v2_1, quantity: quantity }],
+            lineItems: [{ price: PRICE_ID, quantity: quantity }],
             successUrl:
               DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
             cancelUrl: DOMAIN + "/canceled.html",
