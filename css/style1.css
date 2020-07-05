@@ -1799,34 +1799,19 @@ pre {
 .book {
     
 background-color: #ffffff;
-width: 30%;
+width: 70%;
 display:inline-block ;
-margin: 1%;
+margin-bottom: 10px;
 vertical-align: middle;
 justify-content: center;
 position: relative;
-    padding: 10px;
-    
-
-}
-    
-.bookfull {
-    
-background-color: #ffffff;
-width: 95%;
-display:inline-block ;
-margin: 1%;
-vertical-align: middle;
-justify-content: center;
-position: relative;
-    padding: 10px;
     
 
 }
 
 .pay_intro {
 text-align: left;
-width: 90%;
+width: 70%;
 display:inline-block ;
 margin-bottom: 10px;
 vertical-align: middle;
@@ -1835,7 +1820,7 @@ vertical-align: middle;
     
 .columns {
   float: left;
-  width: 100%;
+  width: 33.3%;
   padding: 8px;
 vertical-align:middle;
     position: relative;
@@ -1845,9 +1830,9 @@ vertical-align:middle;
     
 .columns_t {
   float: left;
-  text-align: center;
-  padding: 20px;
-width: 100%;
+  width: 33.3%;
+  padding: 8px;
+
   position: relative;
  
 
@@ -1909,10 +1894,6 @@ padding: 100px 5px 5px 5px;
 }
     .book {
 
-width: 90%;
-}
-    .bookfull {
-
-width: 90%;
+width: 100%;
 }
 }
