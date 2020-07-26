@@ -54,7 +54,9 @@
 
 
 <body>
-<header>
+    <div id="colorlib-page">
+        <header>
+    
 			<div class="container">
 
 						<div class="colorlib-navbar-brand">
@@ -63,22 +65,31 @@
 						</div>
 
 			</div>
-</header>
+        </header>
     
-
+		<div id="colorlib-blog">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="bold">Order</h2>
+				</div>
+                
+                </div>
+            </div>
+     </div>
     
     <div class="sr-root"> 
     
        
-  <div class="pay_intro"> 
-      v7 / Select below. All payments are proceeded through the secure Stripe platform. 
-        </div>
+ 
         
 <div class="book"> 
     <div class="columns_t">
      
-        Volume 1 : OVERBURDEN
-    
+       <p>Volume 1 : OVERBURDEN</p> 
+    <img
+                src="images/books-cover.jpg"
+                height="120px"
+              />
     </div>
 
     <div class="columns">
@@ -101,10 +112,15 @@
 </div>
     
     <div class="book"> 
-    <div class="columns">
-      <ul class="intro">
-        Volume 2 : OVERBURDEN
-      </ul>
+    <div class="columns_t">
+      
+        <p>Volume 2 : OVERBURDEN</p> 
+   
+         <img
+                src="images/books-cover.jpg"
+                height="120px"
+              />
+        
     </div>
 
     <div class="columns">
@@ -118,13 +134,79 @@
 
        <div class="columns">
       <ul class="price">
-        <button id="basic-photo-button">
+        <button id="buy_Button_v2_2">
             Buy 2 copies
         </button>
         <li class="price_des">£20 + £2 pp</li>
       </ul>
     </div>
 </div>
+        <div class="book"> 
+    <div class="columns_t">
+     
+       <p>Volume 3 : OVERBURDEN</p> 
+   
+         <img
+                src="images/books-cover.jpg"
+                height="120px"
+              />
+        
+    </div>
+
+    <div class="columns">
+      <ul class="price">
+        <button id="buy_Button_v3_1">
+            Buy 1 copy
+        </button>
+        <li class="price_des">£10 + £2 pp</li>
+      </ul>
+    </div>
+
+       <div class="columns">
+      <ul class="price">
+        <button id="buy_Button_v3_2">
+            Buy 2 copies
+        </button>
+        <li class="price_des">£20 + £2 pp</li>
+      </ul>
+    </div>
+</div>
+        
+        <div class="bookfull"> 
+    <div class="columns_t">
+     
+        <p>All 3 volumes</p>
+   
+         <img
+                src="images/books-cover.jpg"
+                height="120px"
+              />
+         <img
+                src="images/books-cover.jpg"
+                height="120px"
+              />
+         <img
+                src="images/books-cover.jpg"
+                height="120px"
+              />
+    </div>
+
+
+       <div class="columns">
+      <ul class="price">
+        <button id="buy_Button_v123">
+            1 copy of each volume
+        </button>
+        <li class="price_des">£20 + £2.5 pp</li>
+      </ul>
+    </div>
+</div>
+        
+         <div class="pay_intro"> 
+      All payments are proceeded on the <img src="images/stripe_logo.png" alt="Girl in a jacket" style="height:20px;"> platform. 
+        </div>
+        
+        
   </div>
     
 
@@ -137,12 +219,12 @@
       // You can also supply a SKU or Plan ID for 
       var PRICE_ID = "price_1H17XGJvV0Sk04iteWcPFhde";
       var PRICE_ID_v1_1 = "price_1H1AMeJvV0Sk04itLiQaD0tj";
-        var PRICE_ID_v1_2 = "price_1H1AN2JvV0Sk04itdr4Bz5bx";
-        var PRICE_ID_v2_1 = "price_1H1ANNJvV0Sk04itmlEAxNHu";
+      var PRICE_ID_v1_2 = "price_1H1AN2JvV0Sk04itdr4Bz5bx";
+       var PRICE_ID_v2_1 = "price_1H9B0nJvV0Sk04itHgkgoOLo";
         var PRICE_ID_v2_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
-        var PRICE_ID_v3_1 = "price_1H17XGJvV0Sk04iteWcPFhde";
-        var PRICE_ID_v3_2 = "price_1H17XGJvV0Sk04iteWcPFhde";
-        var PRICE_ID_bundle = "price_1H17XGJvV0Sk04iteWcPFhde";
+        var PRICE_ID_v3_1 = "price_1H9B1CJvV0Sk04itTQqEddXs";
+        var PRICE_ID_v3_2 = "price_1H9B1XJvV0Sk04itpDtdknXK";
+        var PRICE_ID_v123 = "price_1H9B2DJvV0Sk04itWuEAZw6s";
 
       if (PUBLISHABLE_KEY === "pk_1234") {
         console.log(
@@ -163,6 +245,10 @@
       var buyButton_v1_1 = document.getElementById("buy_Button_v1_1");
       var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
       var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
+    var buyButton_v2_2 = document.getElementById("buy_Button_v2_2");
+    var buyButton_v3_1 = document.getElementById("buy_Button_v3_1");
+    var buyButton_v3_2 = document.getElementById("buy_Button_v3_2");
+    var buyButton_v123 = document.getElementById("buy_Button_v123");
     
   
       // Handle any errors from Checkout
@@ -173,6 +259,7 @@
         }
       };
 
+    // ##### Volume 1 / 1 #####
       buyButton_v1_1.addEventListener("click", function() {
         var quantity = 1
 
@@ -183,13 +270,14 @@
             mode: 'payment',
             lineItems: [{ price: PRICE_ID_v1_1, quantity: quantity }],
             successUrl:
-              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/canceled.html",
+              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/session_cancelled.html",
             shippingAddressCollection: {allowedCountries: ['GB'],}
           })
           .then(handleResult);
       });
     
+     // ##### Volume 1 / 2 #####
           buyButton_v1_2.addEventListener("click", function() {
         var quantity = 1
 
@@ -200,13 +288,15 @@
             mode: 'payment',
             lineItems: [{ price: PRICE_ID_v1_2, quantity: quantity }],
             successUrl:
-              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/canceled.html",
+              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/session_cancelled.html",
             shippingAddressCollection: {allowedCountries: ['GB'],}
           })
           .then(handleResult);
       });
     
+    
+     // ##### Volume 2 / 1 #####
      buyButton_v2_1.addEventListener("click", function() {
         var quantity = 1
 
@@ -217,12 +307,88 @@
             mode: 'payment',
             lineItems: [{ price: PRICE_ID_v2_1, quantity: quantity }],
             successUrl:
-              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/canceled.html",
+              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/session_cancelled.html",
             shippingAddressCollection: {allowedCountries: ['GB'],}
           })
           .then(handleResult);
       });
+    
+    
+     // ##### Volume 2 / 2 #####
+              buyButton_v2_2.addEventListener("click", function() {
+        var quantity = 1
+
+        // Make the call to Stripe.js to redirect to the checkout page
+        // with the current quantity
+        stripe
+          .redirectToCheckout({
+            mode: 'payment',
+            lineItems: [{ price: PRICE_ID_v2_2, quantity: quantity }],
+            successUrl:
+              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/session_cancelled.html",
+            shippingAddressCollection: {allowedCountries: ['GB'],}
+          })
+          .then(handleResult);
+      });
+    
+     // ##### Volume 3 / 1 #####
+              buyButton_v3_1.addEventListener("click", function() {
+        var quantity = 1
+
+        // Make the call to Stripe.js to redirect to the checkout page
+        // with the current quantity
+        stripe
+          .redirectToCheckout({
+            mode: 'payment',
+            lineItems: [{ price: PRICE_ID_v3_1, quantity: quantity }],
+            successUrl:
+              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/session_cancelled.html",
+            shippingAddressCollection: {allowedCountries: ['GB'],}
+          })
+          .then(handleResult);
+      });
+    
+     // ##### Volume 3 / 2 #####
+              buyButton_v3_2.addEventListener("click", function() {
+        var quantity = 1
+
+        // Make the call to Stripe.js to redirect to the checkout page
+        // with the current quantity
+        stripe
+          .redirectToCheckout({
+            mode: 'payment',
+            lineItems: [{ price: PRICE_ID_v3_2, quantity: quantity }],
+            successUrl:
+              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/session_cancelled.html",
+            shippingAddressCollection: {allowedCountries: ['GB'],}
+          })
+          .then(handleResult);
+      });
+    
+     // ##### Volume 1 + 2+ 3 / 1 copy #####
+              buyButton_v123.addEventListener("click", function() {
+        var quantity = 1
+
+        // Make the call to Stripe.js to redirect to the checkout page
+        // with the current quantity
+        stripe
+          .redirectToCheckout({
+            mode: 'payment',
+            lineItems: [{ price: PRICE_ID_v123, quantity: quantity }],
+            successUrl:
+              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/session_cancelled.html",
+            shippingAddressCollection: {allowedCountries: ['GB'],}
+          })
+          .then(handleResult);
+      });
+    
+    
+    
     </script>
   </body>
     
