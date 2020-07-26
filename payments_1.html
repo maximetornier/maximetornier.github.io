@@ -265,8 +265,8 @@
             mode: 'payment',
             lineItems: [{ price: PRICE_ID_v1_1, quantity: quantity }],
             successUrl:
-              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/canceled.html",
+              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/session_cancelled.html",
             shippingAddressCollection: {allowedCountries: ['GB'],}
           })
           .then(handleResult);
@@ -282,8 +282,8 @@
             mode: 'payment',
             lineItems: [{ price: PRICE_ID_v1_2, quantity: quantity }],
             successUrl:
-              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/canceled.html",
+              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/session_cancelled.html",
             shippingAddressCollection: {allowedCountries: ['GB'],}
           })
           .then(handleResult);
@@ -299,8 +299,8 @@
             mode: 'payment',
             lineItems: [{ price: PRICE_ID_v2_1, quantity: quantity }],
             successUrl:
-              DOMAIN + "/success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/canceled.html",
+              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            cancelUrl: DOMAIN + "/session_cancelled.html",
             shippingAddressCollection: {allowedCountries: ['GB'],}
           })
           .then(handleResult);

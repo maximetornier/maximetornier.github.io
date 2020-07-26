@@ -54,7 +54,9 @@
 
 
 <body>
-<header>
+    <div id="colorlib-page">
+        <header>
+    
 			<div class="container">
 
 						<div class="colorlib-navbar-brand">
@@ -63,19 +65,45 @@
 						</div>
 
 			</div>
-</header>
-    <div class="sr-root">
-      <div class="sr-main">
-           <section class="container2">
-        <div class="sr-payment-summary completed-view">
-          <h1>Thank you so much!</h1>
-          <h2>Your test payment succeeded</h2>
-          <h4>Checkout Session ID: <span id="session"></span></h4>
+        </header>
+    
+		<div id="colorlib-blog">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="bold">Order</h2>
+				</div>
+                
+                </div>
+            </div>
+     </div>
+    
+    <div class="sr-root"> 
+    
+       
+ 
+        
+<div class="bookfull"> 
+    <p>Thank you verz much. Your payment was successful. You will receive a separate confirmation by email.</p>
+    <p>Checkout Session ID: <span id="session"></span></p>
+    <p><a href="index.html">Take me back to the main page</a></p>
+    
+</div>
+    
+    
+
+        
+    
+        
+         <div class="pay_intro"> 
+      All payments are proceeded on the <img src="images/stripe_logo.png" alt="Girl in a jacket" style="height:20px;"> platform. 
         </div>
-          </section>
-    </div>
-    <script>
-      // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
+        
+        
+  </div>
+    
+
+<script>
+    // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
       var PUBLISHABLE_KEY = "pk_test_51GtbgiJvV0Sk04itrLRZ4ckAFF3ueoMuzjDNrLTKJJAf5yCU0ULrp8zgeTSnXXzIvcQwUuMGzkKBnjh6sA3T5sEE00rgE2fjmv";
       
       if (PUBLISHABLE_KEY === "pk_1234") {
