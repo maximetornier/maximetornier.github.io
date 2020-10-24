@@ -240,13 +240,13 @@
 
       var stripe = Stripe(PUBLISHABLE_KEY);
 
-      var buyButton_v1_1 = document.getElementById("buy_Button_v1_1");
-      var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
+      //var buyButton_v1_1 = document.getElementById("buy_Button_v1_1");
+      //var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
       var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
     var buyButton_v2_2 = document.getElementById("buy_Button_v2_2");
     var buyButton_v3_1 = document.getElementById("buy_Button_v3_1");
     var buyButton_v3_2 = document.getElementById("buy_Button_v3_2");
-    var buyButton_v123 = document.getElementById("buy_Button_v123");
+    //var buyButton_v123 = document.getElementById("buy_Button_v123");
     
   
       // Handle any errors from Checkout
@@ -258,40 +258,40 @@
       };
 
     // ##### Volume 1 / 1 #####
-      buyButton_v1_1.addEventListener("click", function() {
-        var quantity = 1
+      //buyButton_v1_1.addEventListener("click", function() {
+       // var quantity = 1
 
         // Make the call to Stripe.js to redirect to the checkout page
         // with the current quantity
-        stripe
-          .redirectToCheckout({
-            mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v1_1, quantity: quantity }],
-            successUrl:
-              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/session_cancelled.html",
-            shippingAddressCollection: {allowedCountries: ['GB'],}
-          })
-          .then(handleResult);
-      });
+       // stripe
+       //   .redirectToCheckout({
+       //     mode: 'payment',
+       //     lineItems: [{ price: PRICE_ID_v1_1, quantity: quantity }],
+       //     successUrl:
+       //       DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+       //     cancelUrl: DOMAIN + "/session_cancelled.html",
+       //     shippingAddressCollection: {allowedCountries: ['GB'],}
+       //   })
+     //     .then(handleResult);
+    //  });
     
      // ##### Volume 1 / 2 #####
-          buyButton_v1_2.addEventListener("click", function() {
-        var quantity = 1
+     //     buyButton_v1_2.addEventListener("click", function() {
+     //   var quantity = 1
 
         // Make the call to Stripe.js to redirect to the checkout page
         // with the current quantity
-        stripe
-          .redirectToCheckout({
-            mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v1_2, quantity: quantity }],
-            successUrl:
-              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/session_cancelled.html",
-            shippingAddressCollection: {allowedCountries: ['GB'],}
-          })
-          .then(handleResult);
-      });
+      //  stripe
+       //   .redirectToCheckout({
+       //     mode: 'payment',
+         //   lineItems: [{ price: PRICE_ID_v1_2, quantity: quantity }],
+          //  successUrl:
+            //  DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            //cancelUrl: DOMAIN + "/session_cancelled.html",
+            //shippingAddressCollection: {allowedCountries: ['GB'],}
+          //})
+          //.then(handleResult);
+     // });
     
     
      // ##### Volume 2 / 1 #####
@@ -368,22 +368,22 @@
       });
     
      // ##### Volume 1 + 2+ 3 / 1 copy #####
-              buyButton_v123.addEventListener("click", function() {
-        var quantity = 1
+        //      buyButton_v123.addEventListener("click", function() {
+       // var quantity = 1
 
         // Make the call to Stripe.js to redirect to the checkout page
         // with the current quantity
-        stripe
-          .redirectToCheckout({
-            mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v123, quantity: quantity }],
-            successUrl:
-              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/session_cancelled.html",
-            shippingAddressCollection: {allowedCountries: ['GB'],}
-          })
-          .then(handleResult);
-      });
+       // stripe
+        //  .redirectToCheckout({
+       //     mode: 'payment',
+        //    lineItems: [{ price: PRICE_ID_v123, quantity: quantity }],
+        //    successUrl:
+        //      DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+        //    cancelUrl: DOMAIN + "/session_cancelled.html",
+        //    shippingAddressCollection: {allowedCountries: ['GB'],}
+        //  })
+       //   .then(handleResult);
+     // });
     
     
     
