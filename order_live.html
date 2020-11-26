@@ -154,7 +154,7 @@
     <div class="columns">
       <ul class="price">
         <button id="buy_Button_v3_1">
-            Buy 1 copy
+            <strike>Buy 1 copy - Sold out</strike>
         </button>
         <li class="price_des">£10 + £2 pp</li>
       </ul>
@@ -163,7 +163,7 @@
        <div class="columns">
       <ul class="price">
         <button id="buy_Button_v3_2">
-            Buy 2 copies
+             <strike>Buy 2 copies - Sold out</strike>
         </button>
         <li class="price_des">£20 + £2 pp</li>
       </ul>
@@ -244,8 +244,8 @@
       //var buyButton_v1_2 = document.getElementById("buy_Button_v1_2");
     //  var buyButton_v2_1 = document.getElementById("buy_Button_v2_1");
     // var buyButton_v2_2 = document.getElementById("buy_Button_v2_2");
-    var buyButton_v3_1 = document.getElementById("buy_Button_v3_1");
-    var buyButton_v3_2 = document.getElementById("buy_Button_v3_2");
+   // var buyButton_v3_1 = document.getElementById("buy_Button_v3_1");
+   // var buyButton_v3_2 = document.getElementById("buy_Button_v3_2");
     //var buyButton_v123 = document.getElementById("buy_Button_v123");
     
   
@@ -331,41 +331,41 @@
         //  .then(handleResult);
    //   });
     
-     // ##### Volume 3 / 1 #####
-              buyButton_v3_1.addEventListener("click", function() {
-        var quantity = 1
+     // ##### Volume 3 / 1  #####
+//              buyButton_v3_1.addEventListener("click", function() {
+  //      var quantity = 1
 
         // Make the call to Stripe.js to redirect to the checkout page
         // with the current quantity
-        stripe
-          .redirectToCheckout({
-            mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v3_1, quantity: quantity }],
-            successUrl:
-              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/session_cancelled.html",
-            shippingAddressCollection: {allowedCountries: ['GB'],}
-          })
-          .then(handleResult);
-      });
+    //    stripe
+      //    .redirectToCheckout({
+        //    mode: 'payment',
+          //  lineItems: [{ price: PRICE_ID_v3_1, quantity: quantity }],
+//            successUrl:
+  //            DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+    //        cancelUrl: DOMAIN + "/session_cancelled.html",
+      //      shippingAddressCollection: {allowedCountries: ['GB'],}
+        //  })
+          //.then(handleResult);
+//      });
     
      // ##### Volume 3 / 2 #####
-              buyButton_v3_2.addEventListener("click", function() {
-        var quantity = 1
+//              buyButton_v3_2.addEventListener("click", function() {
+  //      var quantity = 1
 
         // Make the call to Stripe.js to redirect to the checkout page
         // with the current quantity
-        stripe
-          .redirectToCheckout({
-            mode: 'payment',
-            lineItems: [{ price: PRICE_ID_v3_2, quantity: quantity }],
-            successUrl:
-              DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
-            cancelUrl: DOMAIN + "/session_cancelled.html",
-            shippingAddressCollection: {allowedCountries: ['GB'],}
-          })
-          .then(handleResult);
-      });
+//        stripe
+  //        .redirectToCheckout({
+    //        mode: 'payment',
+      //      lineItems: [{ price: PRICE_ID_v3_2, quantity: quantity }],
+        //    successUrl:
+          //    DOMAIN + "/session_success.html?session_id={CHECKOUT_SESSION_ID}",
+            //cancelUrl: DOMAIN + "/session_cancelled.html",
+//            shippingAddressCollection: {allowedCountries: ['GB'],}
+  //        })
+    //      .then(handleResult);
+      //});
     
      // ##### Volume 1 + 2+ 3 / 1 copy #####
         //      buyButton_v123.addEventListener("click", function() {
