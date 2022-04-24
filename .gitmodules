@@ -1,5 +1,5 @@
 [submodule "georgiahall"]
-	path = Test
+	path = georgiahall
 	url = https://github.com/maximetornier/georgiahall
 
 [submodule "Test"]
